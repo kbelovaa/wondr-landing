@@ -7,6 +7,11 @@
   margin: 0 auto;
 }
 
+.main {
+  min-height: calc(100vh - 408px);
+  animation: fadeIn 0.3s ease-in;
+}
+
 .input {
   border-radius: 2px;
   background: rgba(55, 206, 179, 0.05);
@@ -140,6 +145,25 @@
     &::after {
       background: #5e676c;
     }
+  }
+}
+
+.spinner {
+  margin: 100px auto 0;
+  border: 10px solid #E7FBFD;
+  border-radius: 50%;
+  border-top: 10px solid #146C79;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import background1 from '../../images/background1.png';
 import screens from '../../images/screens.png';
@@ -29,11 +29,39 @@ const Main = () => {
   const [isTextActive, setIsTextActive] = useState(false);
   const [isFormValid, setIsFormValid] = useState(true);
   const [isMessageSend, setIsMessageSend] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const { t, i18n } = useTranslation();
   const { language } = i18n;
 
   const contactUsRef = useRef(null);
+
+  useEffect(() => {
+    const images = document.querySelectorAll('img');
+    const totalImages = images.length;
+    let loadedImages = 0;
+
+    const handleImageLoad = () => {
+      loadedImages++;
+      if (loadedImages === totalImages) {
+        setImagesLoaded(true);
+      }
+    };
+
+    images.forEach((img) => {
+      if (img.complete) {
+        handleImageLoad();
+      } else {
+        img.addEventListener('load', handleImageLoad);
+      }
+    });
+
+    return () => {
+      images.forEach((img) => {
+        img.removeEventListener('load', handleImageLoad);
+      });
+    };
+  }, []);
 
   const handleContactUsClick = () => {
     contactUsRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -73,6 +101,14 @@ const Main = () => {
       setIsFormValid(false);
     }
   };
+
+  if (!imagesLoaded) {
+    return (
+      <div className="main">
+        <div className='spinner'></div>
+      </div>
+    );
+  }
 
   return (
     <div className="main">

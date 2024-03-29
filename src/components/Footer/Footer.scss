@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 178px;
+  padding-top: 40px;
+
+  &-section {
+    background: #f8fcfb;
+  }
+
+  &__logo {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    color: #92a1a9;
+  }
+
+  &__links {
+    display: flex;
+    margin-top: 10px;
+
+    & li:last-of-type .footer__link {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    margin-right: 10px;
+  }
+}

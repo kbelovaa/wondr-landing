@@ -1,0 +1,153 @@
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.input {
+  border-radius: 2px;
+  background: rgba(55, 206, 179, 0.05);
+  border: none;
+  padding: 15px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 90%;
+  letter-spacing: -0.6px;
+  transition: all 0.3s ease;
+  height: 60px;
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid rgba(55, 206, 179, 0.05);
+
+  &-wrap {
+    position: relative;
+
+    &:last-of-type .input {
+      min-height: 118px;
+    }
+  }
+}
+
+.invalid .invalid-field {
+  border: 1px solid #ffbdbd;
+}
+
+.label {
+  color: #9c9c9c;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 90%;
+  letter-spacing: -0.6px;
+  position: absolute;
+  top: 30px;
+  left: 16px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+
+  .active & {
+    font-size: 10px;
+    letter-spacing: -0.3px;
+    top: 15px;
+  }
+}
+
+.message {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 90%;
+  letter-spacing: -0.48px;
+  margin: 7px 0 0 16px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.btn {
+  border-radius: 50px;
+  border: 2px solid #37d1b5;
+  background: #37d1b5;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 40px;
+  height: 60px;
+  line-height: 60px;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+
+  &.inactive {
+    background: #9ae9db;
+    color: #ccfbf3;
+    cursor: default;
+
+    &:hover,
+    &:active {
+      background: #9ae9db;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 10px 0px rgba(55, 209, 181, 0.4);
+  }
+
+  &:active {
+    background: #02ebc1;
+    box-shadow: none;
+  }
+}
+
+.link {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  color: #92a1a9;
+  position: relative;
+  transition: all 0.3s ease;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 11px;
+    letter-spacing: 0.569px;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    background: transparent;
+    width: 100%;
+    height: 1px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::after {
+    background: #92a1a9;
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    color: #5e676c;
+
+    &::after {
+      background: #5e676c;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

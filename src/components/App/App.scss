@@ -34,6 +34,10 @@
     &:last-of-type .input {
       min-height: 118px;
     }
+
+    & textarea {
+      resize: none;
+    }
   }
 }
 

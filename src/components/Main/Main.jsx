@@ -116,17 +116,17 @@ const Main = () => {
         <div className="container">
           <div className="banner">
             <h1 className="banner__title">
-              Turning downtime
-              <br /> into <span className="banner__title_highlighted">revenue</span>
+              {t('turningDownTime')}
+              <br /> {t('into')} <span className="banner__title_highlighted">{t('revenue')}</span>
             </h1>
             <p className="banner__text">
-              With Wondr, restaurants can <br />
-              instantly attract customers <br />
-              when they need them most
+              {t('bannerLine1')} <br />
+              {t('bannerLine2')} <br />
+              {t('bannerLine3')}
             </p>
             <img className="banner__img" src={screens} alt="Screens" />
             <button className="btn" onClick={handleContactUsClick}>
-              Contact us
+              {t('contactUs')}
             </button>
           </div>
         </div>
@@ -135,15 +135,11 @@ const Main = () => {
         <div className="container">
           <div className="benefits">
             <p className="benefits__text">
-              Wondr is an <span className="benefits__text_bold">easy and instant way to attract customers</span>. In a
-              few simple steps you create ads with time-sensitive offers while Wondr’s algorithm analyses the
-              addressable market and predicts consumer behaviour, resulting in highly targeted distribution to nearby
-              customers. With minimal effort Wondr gives you{' '}
-              <span className="benefits__text_bold">maximum impact and conversion rate</span>.
+              {t('wondrIs')} <span className="benefits__text_bold">{t('wayToAttract')}</span>. {t('createAd')}{' '}
+              <span className="benefits__text_bold">{t('maximumImpact')}</span>.
             </p>
             <p className="benefits__text">
-              You only pay a small fee after a sale has taken place - a unique proposition in the world where
-              advertising still is paid for upfront, without any guarantee of success.
+              {t('youOnlyPay')}
             </p>
           </div>
         </div>
@@ -151,23 +147,23 @@ const Main = () => {
       <section className="result-section" style={{ backgroundImage: `url(${background2})` }}>
         <div className="container">
           <div className="result">
-            <h2 className="result__title">The result</h2>
+            <h2 className="result__title">{t('result')}</h2>
             <div className="result__chart">
               <img className="result__chart-img" src={chart} alt="Chart" />
               <div className="result__weekdays">
                 {weekdays.map((weekday, index) => (
                   <span key={index} className="result__day">
-                    {weekday}
+                    {t(weekday)}
                   </span>
                 ))}
               </div>
-              <span className="result__label">Break-even</span>
+              <span className="result__label">{t('breakEven')}</span>
             </div>
             <div className="result__legend">
-              <h4 className="result__subtitle">Unused capacity</h4>
+              <h4 className="result__subtitle">{t('unusedCapacity')}</h4>
               <div className="result__indicator">
                 <span className="result__value">
-                  Before: <span className="result__value_bold">82.7%</span>
+                  {t('before')}: <span className="result__value_bold">82.7%</span>
                 </span>
                 <div className="result__line">
                   <div className="result__bar"></div>
@@ -175,7 +171,7 @@ const Main = () => {
               </div>
               <div className="result__indicator">
                 <span className="result__value">
-                  After: <span className="result__value_bold">54.2%</span>
+                  {t('after')}: <span className="result__value_bold">54.2%</span>
                 </span>
                 <div className="result__line">
                   <div className="result__bar"></div>
@@ -189,40 +185,35 @@ const Main = () => {
         <div className="container">
           <div className="scenario">
             <p className="scenario__text">
-              Customer traffic at restaurants naturally varies throughout operating hours, with slow periods and reduced
-              guest numbers significantly impacting sales. Wondr solves this by empowering restaurants to drive customer
-              traffic during crucial times. By creating and promoting targeted, time-limited offers during slower
-              business hours, restaurants can effectively attract and engage customers right when needed, transforming
-              underperforming hours into valuable revenue opportunities. While customers gain access to savings during
-              low-traffic periods. <span className="scenario__text_bold">A true win-win scenario</span>.
+              {t('scenario')} <span className="scenario__text_bold">{t('winScenario')}</span>{t('scenarioAfter')}
             </p>
             <div className="scenario__points">
               <div className="scenario__column">
                 <div className="scenario__point">
                   <span className="scenario__arrow">↑</span>
-                  <span className="scenario__value">Revenue</span>
+                  <span className="scenario__value">{t('revenueB')}</span>
                 </div>
                 <div className="scenario__point">
                   <span className="scenario__arrow">↓</span>
-                  <span className="scenario__value">Downtime</span>
+                  <span className="scenario__value">{t('downtime')}</span>
                 </div>
                 <div className="scenario__point">
                   <span className="scenario__arrow">↓</span>
-                  <span className="scenario__value">Customer Acquisition Cost </span>
+                  <span className="scenario__value">{t('customerAcCost')}</span>
                 </div>
               </div>
               <div className="scenario__column">
                 <div className="scenario__point">
                   <span className="scenario__arrow">↑</span>
-                  <span className="scenario__value">Customer Awareness</span>
+                  <span className="scenario__value">{t('customerAwareness')}</span>
                 </div>
                 <div className="scenario__point">
                   <span className="scenario__arrow">↑</span>
-                  <span className="scenario__value">Market Visibility</span>
+                  <span className="scenario__value">{t('marketVisibility')}</span>
                 </div>
                 <div className="scenario__point">
                   <span className="scenario__arrow">↑</span>
-                  <span className="scenario__value">Reach</span>
+                  <span className="scenario__value">{t('reach')}</span>
                 </div>
               </div>
             </div>
@@ -232,24 +223,23 @@ const Main = () => {
       <section className="work-section" style={{ backgroundImage: `url(${background3})` }}>
         <div className="container">
           <div className="work">
-            <h2 className="work__title">How it works</h2>
+            <h2 className="work__title">{t('howItWorks')}</h2>
             <div className="work__step">
               <img className="work__screen" src={screen12} alt="Screens" />
               <div className="work__info">
                 <img className="work__note" src={note1} alt="Note" />
-                <h3 className="work__subtitle">Create</h3>
+                <h3 className="work__subtitle">{t('create')}</h3>
                 <p className="work__text">
-                  In a few simple steps restaurants create time-sensitive, take-out or dine-in offers seen by
-                  purchase-ready nearby customers on the Wondr app.
+                  {t('createText')}
                 </p>
               </div>
             </div>
             <div className="work__step">
               <div className="work__info">
                 <img className="work__note" src={note2} alt="Note" />
-                <h3 className="work__subtitle">Schedule</h3>
+                <h3 className="work__subtitle">{t('schedule')}</h3>
                 <p className="work__text">
-                  Wondr’s algorithm suggests optimal times to run highly targeted offers with discounts to customers.
+                  {t('scheduleText')}
                 </p>
               </div>
               <img className="work__screen" src={screen3} alt="Screen" />
@@ -258,10 +248,9 @@ const Main = () => {
               <img className="work__screen" src={screen4} alt="Screen" />
               <div className="work__info">
                 <img className="work__note" src={note3} alt="Note" />
-                <h3 className="work__subtitle">Welcome</h3>
+                <h3 className="work__subtitle">{t('welcome')}</h3>
                 <p className="work__text">
-                  When purchasing take-out or making a dine-in reservation, the customer will receive a QR code, which
-                  they will present to the restaurant to be scanned.
+                  {t('welcomeText')}
                 </p>
               </div>
             </div>
@@ -271,21 +260,21 @@ const Main = () => {
       <section className="pricing-section">
         <div className="container">
           <div className="pricing">
-            <h2 className="pricing__title">Pricing</h2>
+            <h2 className="pricing__title">{t('pricing')}</h2>
             <p className="pricing__text">
-              Priced to be efficient, measurable and the lowest advertising/customer <br />
-              acquisition cost medium available, Wondr only charges upon actual sales results
+              {t('pricingTextLine1')} <br />
+              {t('pricingTextLine2')}
             </p>
             <div className="pricing__blocks">
               <div className="pricing__block">
-                <span className="pricing__label">Take-out</span>
+                <span className="pricing__label">{t('takeOut')}</span>
                 <span className="pricing__value">10%</span>
-                <span className="pricing__label">of the total bill</span>
+                <span className="pricing__label">{t('ofTheTotalBill')}</span>
               </div>
               <div className="pricing__block">
-                <span className="pricing__label">Dine-in</span>
+                <span className="pricing__label">{t('dinein')}</span>
                 <span className="pricing__value">5 BYN</span>
-                <span className="pricing__label">per reservation</span>
+                <span className="pricing__label">{t('perReservation')}</span>
               </div>
             </div>
           </div>
@@ -294,22 +283,19 @@ const Main = () => {
       <section className="cost-section">
         <div className="container">
           <div className="cost">
-            <h2 className="cost__title">Customer Acquisition Cost</h2>
+            <h2 className="cost__title">{t('customerAcCost')}</h2>
             <p className="cost__text">
-              CAC - the most important yet elusive metric when growing the customer base and loyalty. With the
-              traditional approach, finding a precise and real-time CAC is often difficult as it is based on past
-              spending and fails to distinguish between high and low-spending clients. With Wondr, it is in real-time
-              and precise, set by the restaurant itself.
+              {t('cacText')}
             </p>
             <div className="cost__line">
               <span className="cost__label">Wondr</span>
-              <p className="cost__formula">CAC = promotional discount + Wondr fee</p>
+              <p className="cost__formula">{t('wondrFormula')}</p>
             </div>
             <div className="cost__line">
-              <span className="cost__label">Traditional</span>
+              <span className="cost__label">{t('traditional')}</span>
               <p className="cost__formula">
-                CAC = all marketing costs per year /<br />
-                number of customers per year
+                {t('traditionalFormulaLine1')}<br />
+                {t('traditionalFormulaLine2')}
               </p>
             </div>
           </div>
@@ -318,36 +304,36 @@ const Main = () => {
       <section className="key-benefits-section">
         <div className="container">
           <div className="key-benefits">
-            <h2 className="key-benefits__title">Key benefits</h2>
+            <h2 className="key-benefits__title">{t('keyBenefits')}</h2>
             <div className="key-benefits__items">
               <div className="key-benefits__item">
-                <h3 className="key-benefits__subtitle">Instant</h3>
-                <p className="key-benefits__text">Post an ad and instantly get access to purchase-ready customers</p>
+                <h3 className="key-benefits__subtitle">{t('instant')}</h3>
+                <p className="key-benefits__text">{t('instantText')}</p>
               </div>
               <div className="key-benefits__item">
-                <h3 className="key-benefits__subtitle">Inexpensive</h3>
-                <p className="key-benefits__text">Free to use and only pay when a successful sale is generated</p>
+                <h3 className="key-benefits__subtitle">{t('inexpensive')}</h3>
+                <p className="key-benefits__text">{t('inexpensiveText')}</p>
               </div>
               <div className="key-benefits__item">
-                <h3 className="key-benefits__subtitle">Smart</h3>
+                <h3 className="key-benefits__subtitle">{t('smart')}</h3>
                 <p className="key-benefits__text">
-                  Wondr's algorithm suggests optimal times to run ads and attract the most customers
+                  {t('smartText')}
                 </p>
               </div>
               <div className="key-benefits__item">
-                <h3 className="key-benefits__subtitle">Effective</h3>
-                <p className="key-benefits__text">Allows you to upsell downtime + maximise peak hours</p>
+                <h3 className="key-benefits__subtitle">{t('effective')}</h3>
+                <p className="key-benefits__text">{t('effextiveText')}</p>
               </div>
               <div className="key-benefits__item">
-                <h3 className="key-benefits__subtitle">Competitive</h3>
+                <h3 className="key-benefits__subtitle">{t('competitive')}</h3>
                 <p className="key-benefits__text">
-                  No upfront marketing or material cost, no time/cash investment into hit-or-miss marketing
+                  {t('competitiveText')}
                 </p>
               </div>
               <div className="key-benefits__item">
-                <h3 className="key-benefits__subtitle">Unique</h3>
+                <h3 className="key-benefits__subtitle">{t('unique')}</h3>
                 <p className="key-benefits__text">
-                  Allows you to precisely calculate and set your own customer acquisition cost
+                  {t('uniqueText')}
                 </p>
               </div>
             </div>
@@ -357,20 +343,14 @@ const Main = () => {
       <section className="exclusive-section">
         <div className="container">
           <div className="exclusive">
-            <h2 className="exclusive__title">Exclusive</h2>
+            <h2 className="exclusive__title">{t('exclusive')}</h2>
             <p className="exclusive__text">
-              Wondr works exclusively with restaurants that offer excellent products and assists them in driving more
-              customer traffic. The service is by invitation only and is extended solely to premium restaurants, which
-              we categorize as Category A, representing approximately [x]% of all restaurants in [city]. Wondr
-              differentiates itself from any discount app and does not offer low-quality food options from average and
-              lower-tier restaurants.
+              {t('exclusiveText1')}
             </p>
             <p className="exclusive__text">
-              We have identified [nr] out of the [nr] restaurants in [city] as category A restaurants. To access the
-              list of these outstanding restaurants, click the link below. This list undergoes continuous review to
-              ensure accuracy and relevance in line with our high standards.
+              {t('exclusiveText2')}
             </p>
-            <span className="exclusive__link">See list!</span>
+            <span className="exclusive__link">{t('seeList')}</span>
           </div>
         </div>
       </section>
@@ -378,11 +358,11 @@ const Main = () => {
         <div className="container">
           <div className="reviews">
             <div className="reviews__block">
-              <span className="reviews__subtitle">Happy users</span>
+              <span className="reviews__subtitle">{t('happyUsers')}</span>
               <span className="reviews__text">250+</span>
             </div>
             <div className="reviews__block">
-              <span className="reviews__subtitle">Service</span>
+              <span className="reviews__subtitle">{t('service')}</span>
               <div className="reviews__stars">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <svg
@@ -407,8 +387,8 @@ const Main = () => {
               </div>
             </div>
             <div className="reviews__block">
-              <span className="reviews__subtitle">Pay secure</span>
-              <span className="reviews__text">with Stripe</span>
+              <span className="reviews__subtitle">{t('paySecure')}</span>
+              <span className="reviews__text">{t('withStripe')}</span>
             </div>
           </div>
         </div>
@@ -417,14 +397,14 @@ const Main = () => {
         <div className="container">
           <div className="interested">
             <div className="interested__window">
-              <h2 className="interested__title">Interested? Let’s talk</h2>
+              <h2 className="interested__title">{t('letsTalk')}</h2>
               <p className="interested__text">
-                Simply click here to enhance your restaurant's performance with this powerful new tool.
+                {t('letsTalkText')}
               </p>
               <button className="btn interested__btn" onClick={handleContactUsClick}>
-                Contact us
+                {t('contactUs')}
               </button>
-              <p className="interested__text">No commitment. Cancel anytime.</p>
+              <p className="interested__text">{t('letsTalkNote')}</p>
             </div>
           </div>
         </div>
@@ -436,8 +416,8 @@ const Main = () => {
               <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
                 <path d="M10.5 32.5L23 45L50.5 17.5" stroke="#146C79" strokeWidth="2" strokeLinecap="round" />
               </svg>
-              <h2 className="confirmation__title">Your message has been sent</h2>
-              <p className="confirmation__text">We will contact you soon</p>
+              <h2 className="confirmation__title">{t('messageHasBeenSent')}</h2>
+              <p className="confirmation__text">{t('weWillContactYou')}</p>
             </div>
           </div>
         </section>
@@ -445,9 +425,9 @@ const Main = () => {
         <section className="contact-section" ref={contactUsRef}>
           <div className="container">
             <div className="contact">
-              <h2 className="contact__title">Fill in</h2>
+              <h2 className="contact__title">{t('fillIn')}</h2>
               <form onSubmit={handleFormSubmit} className={isFormValid ? '' : 'invalid'}>
-                <p className="contact__text">How do you want us to contact you?</p>
+                <p className="contact__text">{t('contactWay')}</p>
                 <CustomSelect selectedOption={contactWay} setSelectedOption={setContactWay} />
                 {contactWay === 'Email' && (
                   <div className={`input-wrap ${isEmailActive || email ? 'active' : ''}`}>
@@ -460,7 +440,7 @@ const Main = () => {
                       onBlur={() => setIsEmailActive(false)}
                     />
                     <label className="label">Email*</label>
-                    {!isEmailValid && <p className="message">Please enter a valid email address</p>}
+                    {!isEmailValid && <p className="message">{t('enterValidEmail')}</p>}
                   </div>
                 )}
                 {contactWay !== 'Email' && (
@@ -473,7 +453,7 @@ const Main = () => {
                       onFocus={() => setIsPhoneActive(true)}
                       onBlur={() => setIsPhoneActive(false)}
                     />
-                    <label className="label">Phone nr*</label>
+                    <label className="label">{t('phoneNumber')}*</label>
                   </div>
                 )}
                 <div className={`input-wrap ${isNameActive || name ? 'active' : ''}`}>
@@ -485,7 +465,7 @@ const Main = () => {
                     onFocus={() => setIsNameActive(true)}
                     onBlur={() => setIsNameActive(false)}
                   />
-                  <label className="label">Name*</label>
+                  <label className="label">{t('name')}*</label>
                 </div>
                 <div className={`input-wrap ${isTextActive || text ? 'active' : ''}`}>
                   <textarea
@@ -500,14 +480,14 @@ const Main = () => {
                     onFocus={() => setIsTextActive(true)}
                     onBlur={() => setIsTextActive(false)}
                   ></textarea>
-                  <label className="label">Text</label>
+                  <label className="label">{t('text')}</label>
                   {!isFormValid &&
                     (!name || (contactWay === 'Email' && !email) || (contactWay !== 'Email' && !phone)) && (
-                      <p className="message">Please fill in all fields</p>
+                      <p className="message">{t('fillAllFields')}</p>
                     )}
                 </div>
                 <button className="btn contact__btn" type="submit">
-                  Send
+                  {t('send')}
                 </button>
               </form>
             </div>

@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer">
           <img className="footer__logo" src={logo} alt="Logo" />
-          <p className="footer__text">Copyright © 2024 WONDR. All rights reserved</p>
+          <p className="footer__text">{t('copyright')}</p>
           <ul className="footer__links">
             <li>
               <a href="#" className="link footer__link">

@@ -1,12 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import './CustomSelect.scss';
 
 const CustomSelect = ({ selectedOption, setSelectedOption }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef(null);
-
-  const { t } = useTranslation();
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);

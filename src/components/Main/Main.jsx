@@ -36,32 +36,49 @@ const Main = () => {
 
   const contactUsRef = useRef(null);
 
-  useEffect(() => {
-    const images = document.querySelectorAll('img');
-    const totalImages = images.length;
-    let loadedImages = 0;
+  // useEffect(() => {
+  //   const images = [
+  //     'background1.png',
+  //     'background2.png',
+  //     'background3.png',
+  //     'background4.png',
+  //     'chart.png',
+  //     'screen3.png',
+  //     'screen4.png',
+  //     'screen12.png',
+  //     'screens.png',
+  //   ];
 
-    const handleImageLoad = () => {
-      loadedImages++;
-      if (loadedImages === totalImages) {
-        setImagesLoaded(true);
-      }
-    };
+  //   const fonts = [
+  //     'font1.woff',
+  //     'font2.ttf',
+  //     // Добавьте сюда все шрифты, которые нужно загрузить
+  //   ];
 
-    images.forEach((img) => {
-      if (img.complete) {
-        handleImageLoad();
-      } else {
-        img.addEventListener('load', handleImageLoad);
-      }
-    });
+  //   const imagePromises = images.map((image) => new Promise((resolve, reject) => {
+  //     const img = new Image();
+  //     img.src = image;
+  //     img.onload = resolve;
+  //     img.onerror = reject;
+  //   }));
 
-    return () => {
-      images.forEach((img) => {
-        img.removeEventListener('load', handleImageLoad);
-      });
-    };
-  }, []);
+  //   const fontPromises = fonts.map((font) => new Promise((resolve, reject) => {
+  //     const fontFace = new FontFace(font, `url(${font})`);
+  //     fontFace.load()
+  //       .then(() => {
+  //         document.fonts.add(fontFace);
+  //         resolve();
+  //       })
+  //       .catch(reject);
+  //   }));
+
+  //   Promise.all([...imagePromises, ...fontPromises])
+  //     .then(() => setLoading(false))
+  //     .catch((error) => {
+  //       console.error('Ошибка при загрузке:', error);
+  //       setLoading(false); // Установите loading в false, даже если произошла ошибка
+  //     });
+  // }, []);
 
   const handleContactUsClick = () => {
     contactUsRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -102,13 +119,13 @@ const Main = () => {
     }
   };
 
-  if (!imagesLoaded) {
-    return (
-      <div className="main">
-        <div className='spinner'></div>
-      </div>
-    );
-  }
+  // if (!imagesLoaded) {
+  //   return (
+  //     <div className="main">
+  //       <div className='spinner'></div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="main">

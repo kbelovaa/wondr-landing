@@ -4,8 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WONDR</title>
+  <style>
+    .main-spinner {
+      margin: auto;
+      border: 10px solid #E7FBFD;
+      border-radius: 50%;
+      border-top: 10px solid #146C79;
+      width: 100px;
+      height: 100px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root"><div class="main-spinner"></div></div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import background1 from '../../images/background1.png';
 import screens from '../../images/screens.png';
@@ -29,56 +29,11 @@ const Main = () => {
   const [isTextActive, setIsTextActive] = useState(false);
   const [isFormValid, setIsFormValid] = useState(true);
   const [isMessageSend, setIsMessageSend] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const { t, i18n } = useTranslation();
   const { language } = i18n;
 
   const contactUsRef = useRef(null);
-
-  // useEffect(() => {
-  //   const images = [
-  //     'background1.png',
-  //     'background2.png',
-  //     'background3.png',
-  //     'background4.png',
-  //     'chart.png',
-  //     'screen3.png',
-  //     'screen4.png',
-  //     'screen12.png',
-  //     'screens.png',
-  //   ];
-
-  //   const fonts = [
-  //     'font1.woff',
-  //     'font2.ttf',
-  //     // Добавьте сюда все шрифты, которые нужно загрузить
-  //   ];
-
-  //   const imagePromises = images.map((image) => new Promise((resolve, reject) => {
-  //     const img = new Image();
-  //     img.src = image;
-  //     img.onload = resolve;
-  //     img.onerror = reject;
-  //   }));
-
-  //   const fontPromises = fonts.map((font) => new Promise((resolve, reject) => {
-  //     const fontFace = new FontFace(font, `url(${font})`);
-  //     fontFace.load()
-  //       .then(() => {
-  //         document.fonts.add(fontFace);
-  //         resolve();
-  //       })
-  //       .catch(reject);
-  //   }));
-
-  //   Promise.all([...imagePromises, ...fontPromises])
-  //     .then(() => setLoading(false))
-  //     .catch((error) => {
-  //       console.error('Ошибка при загрузке:', error);
-  //       setLoading(false); // Установите loading в false, даже если произошла ошибка
-  //     });
-  // }, []);
 
   const handleContactUsClick = () => {
     contactUsRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -118,14 +73,6 @@ const Main = () => {
       setIsFormValid(false);
     }
   };
-
-  // if (!imagesLoaded) {
-  //   return (
-  //     <div className="main">
-  //       <div className='spinner'></div>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="main">

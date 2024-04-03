@@ -189,7 +189,7 @@ i18n.use(initReactI18next).init({
         enterValidMobile: 'Vennligst skriv inn et gyldig telefonnummer',
         text: 'Tekst',
         fillAllFields: 'Vennligst fyll ut alle feltene',
-        send: 'Sende',
+        send: 'Send',
         messageHasBeenSent: 'Meldingen din er sendt',
         weWillContactYou: 'Vi vil kontakte deg snart',
         copyright: 'Copyright © 2024 WONDR. Alle rettigheter forbeholdt',

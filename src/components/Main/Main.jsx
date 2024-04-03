@@ -389,7 +389,7 @@ const Main = () => {
         <section className="contact-section" ref={contactUsRef}>
           <div className="container">
             <div className="contact">
-              <h2 className="contact__title">{t('fillIn')}</h2>
+              <h2 className="contact__title">{t('contactUs')}</h2>
               <form onSubmit={handleFormSubmit} className={isFormValid ? '' : 'invalid'}>
                 <p className="contact__text">{t('contactWay')}</p>
                 <CustomSelect selectedOption={contactWay} setSelectedOption={setContactWay} />

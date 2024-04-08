@@ -149,7 +149,7 @@ const Main = () => {
         <div className="container">
           <div className="scenario">
             <p className="scenario__text">
-              {t('scenario')} <span className="scenario__text_bold">{t('winScenario')}</span>{t('scenarioAfter')}
+              {t('scenario')} <span className="scenario__text_bold">{t('winScenario')}</span>
             </p>
             <div className="scenario__points">
               <div className="scenario__column">

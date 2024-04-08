@@ -273,6 +273,7 @@
         left: 726px;
         top: 84px;
         width: 514px;
+        height: 267px;
         padding: 40px 30px 40px 60px;
       }
     }
@@ -289,6 +290,7 @@
         left: 376px;
         top: 175px;
         width: 611px;
+        height: 231px;
         padding: 40px 70px 40px 30px;
       }
     }
@@ -305,6 +307,7 @@
         left: 453px;
         top: 155px;
         width: 610px;
+        height: 267px;
         padding: 40px 30px 40px 70px;
       }
     }
@@ -312,6 +315,9 @@
 
   &__info {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     z-index: 1;
   }
 

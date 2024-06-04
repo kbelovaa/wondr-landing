@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import background1 from '../../images/background1.png';
 import screens from '../../images/screens.png';
 import background2 from '../../images/background2.png';
@@ -15,12 +16,6 @@ import note4 from '../../images/note4.svg';
 import note5 from '../../images/note5.svg';
 import chart1 from '../../images/chart1.png';
 import chart2 from '../../images/chart2.png';
-import ellipse1 from '../../images/ellipse1.svg';
-import ellipse2 from '../../images/ellipse2.svg';
-import ellipse3 from '../../images/ellipse3.svg';
-import ellipse4 from '../../images/ellipse4.svg';
-import ellipse5 from '../../images/ellipse5.svg';
-import ellipse6 from '../../images/ellipse6.svg';
 import background3 from '../../images/background3.png';
 import background4 from '../../images/background4.png';
 import weekdays from '../../constants/weekdays';
@@ -193,106 +188,132 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section className="work-section">
-        <div className="container">
-          <div className="work">
-            <h2 className="work__title">{t('itsSimple')}</h2>
-            <div className="work__step">
-              <img className="work__screen" src={screen1} alt="Screen" />
-              <img className="work__screen" src={screen2} alt="Screen" />
-              <div className="work__info">
-                <img className="work__note" src={note1} alt="Note" />
-                <h3 className="work__subtitle">{t('makeAd')}</h3>
-                <p className="work__text">
-                  <span className="work__text work__text_highlighted">{t('inAFewSteps')}</span>
-                  {t('makeAdText')}
-                </p>
-              </div>
-            </div>
-            <div className="work__step">
-              <div className="work__info">
-                <img className="work__note" src={note2} alt="Note" />
-                <h3 className="work__subtitle">{t('schedule')}</h3>
-                <p className="work__text">
-                  {t('scheduleText1')}
-                  <span className="work__text work__text_highlighted">{t('optimalTimes')}</span>
-                  {t('scheduleText2')}
-                </p>
-              </div>
-              <img className="work__screen" src={screen3} alt="Screen" />
-            </div>
-            <div className="work__step">
-              <div className="work__chart-wrap">
-                <img className="work__chart" src={chart1} alt="Chart" />
-                <span className="result__day">{t('Thu')}</span>
-              </div>
-              <div className="result__legend">
-                <h4 className="result__subtitle">{t('unusedCapacity')}</h4>
-                <div className="result__indicator">
-                  <span className="result__value">
-                    {t('before')}: <span className="result__value_bold">82.7%</span>
-                  </span>
-                  <div className="result__line">
-                    <div className="result__bar"></div>
+      <ParallaxProvider>
+        <section className="work-section">
+          <img className="work__background" src={background3} alt="Background" />
+          <div className="container">
+            <div className="work">
+              <h2 className="work__title">{t('itsSimple')}</h2>
+              <div className="work__step">
+                <Parallax speed={15}>
+                  <img className="work__screen" src={screen1} alt="Screen" />
+                  <img className="work__screen" src={screen2} alt="Screen" />
+                </Parallax>
+                <Parallax speed={-15}>
+                  <div className="work__info">
+                    <img className="work__note" src={note1} alt="Note" />
+                    <h3 className="work__subtitle">{t('makeAd')}</h3>
+                    <p className="work__text">
+                      <span className="work__text work__text_highlighted">{t('inAFewSteps')}</span>
+                      {t('makeAdText')}
+                    </p>
                   </div>
-                </div>
-                <div className="result__indicator">
-                  <span className="result__value">
-                    {t('after')}: <span className="result__value_bold">54.2%</span>
-                  </span>
-                  <div className="result__line">
-                    <div className="result__bar"></div>
+                </Parallax>
+              </div>
+              <div className="work__step">
+                <Parallax speed={-15}>
+                  <div className="work__info">
+                    <img className="work__note" src={note2} alt="Note" />
+                    <h3 className="work__subtitle">{t('schedule')}</h3>
+                    <p className="work__text">
+                      {t('scheduleText1')}
+                      <span className="work__text work__text_highlighted">{t('optimalTimes')}</span>
+                      {t('scheduleText2')}
+                    </p>
                   </div>
-                </div>
+                </Parallax>
+                <Parallax speed={15}>
+                  <img className="work__screen" src={screen3} alt="Screen" />
+                </Parallax>
               </div>
-              <div className="work__info">
-                <img className="work__note" src={note3} alt="Note" />
-                <h3 className="work__subtitle">{t('distribute')}</h3>
-                <p className="work__text">
-                  {t('distrubuteText1')}
-                  <span className="work__text work__text_highlighted">{t('purchaseReady')}</span>
-                  {t('distributeText2')}
-                </p>
-              </div>
-            </div>
-            <div className="work__step">
-              <div className="work__info">
-                <img className="work__note" src={note4} alt="Note" />
-                <h3 className="work__subtitle">{t('sell')}</h3>
-                <p className="work__text">
-                  {t('sellText1')}
-                  <span className="work__text work__text_highlighted">{t('customersReceive')}</span>
-                  {t('sellText2')}
-                </p>
-              </div>
-              <img className="work__screen" src={screen4} alt="Screen" />
-            </div>
-            <div className="work__step">
-              <div className="work__chart-wrap">
-                <img className="work__chart" src={chart2} alt="Chart" />
-                <span className="result__day">{t('Thu')}</span>
-              </div>
-              <div className="result__legend">
-                <h4 className="result__subtitle">{t('improvement')}</h4>
-                <div className="result__indicator">
-                  <span className="result__value">
-                    <span className="result__value_bold">42.7%</span>
-                  </span>
-                  <div className="result__line">
-                    <div className="result__bar"></div>
+              <div className="work__step">
+                <Parallax speed={10}>
+                  <div className="work__chart-wrap">
+                    <img className="work__chart" src={chart1} alt="Chart" />
+                    <span className="result__day">{t('Thu')}</span>
                   </div>
-                </div>
+                </Parallax>
+                <Parallax speed={-15}>
+                  <div className="result__legend">
+                    <h4 className="result__subtitle">{t('unusedCapacity')}</h4>
+                    <div className="result__indicator">
+                      <span className="result__value">
+                        {t('before')}: <span className="result__value_bold">82.7%</span>
+                      </span>
+                      <div className="result__line">
+                        <div className="result__bar"></div>
+                      </div>
+                    </div>
+                    <div className="result__indicator">
+                      <span className="result__value">
+                        {t('after')}: <span className="result__value_bold">54.2%</span>
+                      </span>
+                      <div className="result__line">
+                        <div className="result__bar"></div>
+                      </div>
+                    </div>
+                  </div>
+                </Parallax>
+                <Parallax speed={-15}>
+                  <div className="work__info">
+                    <img className="work__note" src={note3} alt="Note" />
+                    <h3 className="work__subtitle">{t('distribute')}</h3>
+                    <p className="work__text">
+                      {t('distrubuteText1')}
+                      <span className="work__text work__text_highlighted">{t('purchaseReady')}</span>
+                      {t('distributeText2')}
+                    </p>
+                  </div>
+                </Parallax>
               </div>
-              <div className="work__info">
-                <img className="work__note" src={note5} alt="Note" />
-                <h3 className="work__subtitle">{t('result')}</h3>
-                <p className="work__text">{t('resultText')}</p>
+              <div className="work__step">
+                <Parallax speed={-15}>
+                  <div className="work__info">
+                    <img className="work__note" src={note4} alt="Note" />
+                    <h3 className="work__subtitle">{t('sell')}</h3>
+                    <p className="work__text">
+                      {t('sellText1')}
+                      <span className="work__text work__text_highlighted">{t('customersReceive')}</span>
+                      {t('sellText2')}
+                    </p>
+                  </div>
+                </Parallax>
+                <Parallax speed={15}>
+                  <img className="work__screen" src={screen4} alt="Screen" />
+                </Parallax>
+              </div>
+              <div className="work__step">
+                <Parallax speed={10}>
+                  <div className="work__chart-wrap">
+                    <img className="work__chart" src={chart2} alt="Chart" />
+                    <span className="result__day">{t('Thu')}</span>
+                  </div>
+                </Parallax>
+                <Parallax speed={-15}>
+                  <div className="result__legend">
+                    <h4 className="result__subtitle">{t('improvement')}</h4>
+                    <div className="result__indicator">
+                      <span className="result__value">
+                        <span className="result__value_bold">42.7%</span>
+                      </span>
+                      <div className="result__line">
+                        <div className="result__bar"></div>
+                      </div>
+                    </div>
+                  </div>
+                </Parallax>
+                <Parallax speed={-15}>
+                  <div className="work__info">
+                    <img className="work__note" src={note5} alt="Note" />
+                    <h3 className="work__subtitle">{t('result')}</h3>
+                    <p className="work__text">{t('resultText')}</p>
+                  </div>
+                </Parallax>
               </div>
             </div>
           </div>
-        </div>
-        <img className="work__background" src={background3} alt="Background" />
-      </section>
+        </section>
+      </ParallaxProvider>
       <section className="pricing-section">
         <div className="container">
           <div className="pricing">

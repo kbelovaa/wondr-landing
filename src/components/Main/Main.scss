@@ -423,7 +423,7 @@
   }
 
   &__background {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     bottom: 0;
     z-index: -1;
@@ -469,7 +469,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 60px;
+    padding: 60px 50px;
     width: 333px;
     height: 250px;
 
